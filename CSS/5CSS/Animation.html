@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 10px solid black;
+            border-radius: 100px;
+            border-bottom-color: transparent;
+            animation: moveBox 1.5s ease-in-out infinite;
+        }
+
+        /*Loader Animation*/
+        /* @keyframes moveBox {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        } */
+
+
+        /*Bounce Animation*/
+        @keyframes moveBox {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+
+</html>
