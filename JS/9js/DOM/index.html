@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Guys</h1>
+    </div>
+    <div id="box">
+        <p>whatssss uppppp brooooooo.....</p>
+    </div>
+
+
+    <ul>
+        <li>item1</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <script>
+        // const cont = document.getElementsByClassName('container')
+        // console.log(cont);
+
+
+        // const tag = document.getElementsByTagName('h1')
+        // console.log(tag)
+
+        // const ids = document.getElementById('box')
+        // console.log(ids)
+
+
+
+        const cont = document.querySelector('.container')
+        console.log(cont);
+
+
+        const tag = document.querySelector('h1')
+        console.log(tag);
+
+
+        // const ids = document.querySelector('#box')
+        // console.log(ids)
+        // ids.style.color = 'red';
+        document.querySelector('#box').style.color = 'red'
+
+        const uls = document.querySelectorAll('li');
+        uls.forEach(element => {
+            console.log(element)
+            element.style.color = 'red';
+            element.style.listStyle = 'none';
+            element.style.backgroundColor = 'blue';
+            // element.style.fontSize = '100px';
+        });
+
+
+    </script>
+</body>
+</html>

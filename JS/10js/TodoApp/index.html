@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+</head>
+
+<body>
+    <input class="inp" type="text" placeholder="Enter your task" />
+    <button class="btn">ADD</button>
+    <ul class="taskList">
+        <!-- <li class="taskName">
+            dancing
+            <span class="btnGroups">
+                <button class="up">up</button>
+                <button class="down">down</button>
+                <button class="del">del</button>
+            </span>
+        </li> -->
+    </ul>
+
+    <script>
+        // const taskName = document.querySelector('.taskName');
+        // console.log(taskName.innerHTML)
+        const inp = document.querySelector('.inp');
+        console.log(inp);
+        const btn = document.querySelector('.btn');
+        const taskList = document.querySelector('.taskList')
+
+        btn.addEventListener('click', () => {
+            console.log(inp.value)
+            let task = inp.value;                        // input ke test ko pick krne ke liye hai
+            let li = document.createElement('li');       // list ko create krne ke liye 
+            li.classList.add('taskName');                // lits ke andr class add krne kr liye
+            li.innerHTML = `
+                    <span class="btnGroups">${task} 
+                        <button class="up">up</button>
+                        <button class="down">down</button>
+                        <button class="del">del</button>
+                    </span>`
+
+            li.style.listStyle = "none";
+            taskList.appendChild(li);
+            inp.value = "";
+        })
+
+
+        taskList.addEventListener('click', (ev) => {
+            // console.log(ev.target)
+            let list = ev.target;
+            // console.log(list)
+            if(list.classList.contains('up')) {
+                let parentElement = list.parentElement.parentElement;
+                console.log(parentElement);
+                let previousElement = parentElement.previousElementSibling;
+                console.log(previousElement)
+                taskList.insertBefore(parentElement, previousElement);
+            } 
+            else if(list.classList.contains('down')) {
+                let parentElement = list.parentElement.parentElement;
+                console.log(parentElement);
+                let nextElement = parentElement.nextElementSibling;
+                console.log(nextElement)
+                taskList.insertBefore(nextElement, parentElement);
+            } else if(list.classList.contains('del')) {
+                let parentElement = list.parentElement.parentElement;
+                console.log(parentElement);
+                parentElement.remove();
+            }
+        })
+    </script>
+</body>
+
+</html>

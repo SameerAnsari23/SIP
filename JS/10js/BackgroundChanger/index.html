@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Naveshwar ki duniya</h1>
+    <div class="btns">
+        <button class="red">Red</button>
+        <button class="blue">Blue</button>
+        <button class="babyPink">Baby Pink</button>
+    </div>
+
+    <script>
+        const red = document.querySelector('.red');
+        const blue = document.querySelector('.blue')
+        const babyPink = document.querySelector('.babyPink')
+        const btn = document.querySelector('.btns');
+
+        // red.addEventListener('click', (a) => {
+        //     document.body.style.backgroundColor = 'red'
+        // })
+        // blue.addEventListener('click', (a) => {
+        //     document.body.style.backgroundColor = 'blue'
+        // })
+        // babyPink.addEventListener('click', (a) => {
+        //     document.body.style.backgroundColor = '#F4C2C2'
+        // })
+
+        btn.addEventListener('click', (Naveshwar) => {
+            // console.log(Naveshwar.target)
+            let data = Naveshwar.target;
+            if (data.classList.contains('red')) {
+                // console.log("red");
+                localStorage.setItem("savedColor", 'red')
+                document.body.style.backgroundColor = 'red'
+            } else if (data.classList.contains('blue')) {
+                // console.log("blue");
+                localStorage.setItem("savedColor", 'blue')
+                document.body.style.backgroundColor = 'blue'
+            }
+            else if (data.classList.contains('babyPink')) {
+                // console.log("babyPink");
+                localStorage.setItem("savedColor", '#F4C2C2')
+                document.body.style.backgroundColor = '#F4C2C2'
+            }
+        })
+        let previousColor = localStorage.getItem("savedColor");
+        if(previousColor) {
+            document.body.style.backgroundColor = previousColor;
+        }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>

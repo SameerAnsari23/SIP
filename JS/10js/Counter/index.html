@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            /* justify-content: space-between; */
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button class="inc">Inc</button>
+        <h3>0</h3>
+        <button class="dec">dec</button>
+    </div>
+
+
+    <script>
+        const inc = document.querySelector('.inc');
+        console.log(inc);
+        const cnt = document.querySelector('h3');
+        console.log(cnt);
+        
+        inc.addEventListener('click', () => {
+            // console.log("clicked")
+            cnt.innerHTML = Number(cnt.innerHTML) + 1
+            console.log(cnt.innerHTML)
+            // console.log(cnt.innerText)
+        })
+    </script>
+</body>
+</html>
