@@ -4,17 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Todo App</h1>
 
     <input type="text" class="inp" placeholder="Enter your task" name="inpt"/>
-    <button>Submit</button>
-
+    <button>Add task</button>
+    <ul class="taskList">
+    </ul>
 
     <script>
-        
+        const inp = document.querySelector('.inp');
+        const btn = document.querySelector('button');
+        const taskList = document.querySelector('.taskList');
+
+        function updateTodo(data) {
+            taskList.innerHTML = "";
+            data.forEach(e => {
+                let li = document.createElement('li');
+                li.classList.add('taskName');
+                li.innerHTML = `<span class="pan">${e}</span>
+                                <div class="btnGroup">
+                                    <button class="upBtn">Up</button>
+                                    <button class="downBtn">down</button>
+                                    <button class="delBtn">del</button>
+                                </div>`
+
+                taskList.appendChild(li);
+            });
+            inp.value = "";
+        }
+
+        btn.addEventListener('click', async() => {
+            // console.log(inp.value);
+            let task = inp.value;
+            let {data} = await axios.get(`/addtask?work=${task}`);
+            console.log(data);
+            updateTodo(data)
+        })
+
+
+        async function loadTodos() {
+            try{
+                let {data} = await axios.get('/todos');
+                // console.log(data);
+                updateTodo(data);
+            }
+            catch({error}) {
+                console.log(error)
+            }
+        }
+        loadTodos();
+
+
+        taskList.addEventListener('click', async(e) => {
+            // console.log(e.target);
+            let btns = e.target;
+            if (btns.classList.contains('upBtn')){
+                console.log(btns.parentElement.previousElementSibling.innerText);
+
+                let {data} = await axios.get(`/increase?work=${btns.parentElement.previousElementSibling.innerText}`)
+                updateTodo(data);
+            }
+            else if (btns.classList.contains('downBtn')){
+                console.log(btns.parentElement.previousElementSibling.innerText);
+
+                let {data} = await axios.get(`/decrease?work=${btns.parentElement.previousElementSibling.innerText}`)
+                updateTodo(data);
+            }
+            else if (btns.classList.contains('delBtn')){
+                console.log(btns.parentElement.previousElementSibling.innerText);
+
+                let {data} = await axios.get(`/delete?work=${btns.parentElement.previousElementSibling.innerText}`)
+                updateTodo(data);
+            }
+        })
+
+
     </script>
 </body>
 </html>
