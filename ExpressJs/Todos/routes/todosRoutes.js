@@ -3,10 +3,10 @@ const router = express.Router();
 
 const {getTask, addTask, increaseTask, decreaseTask, deleteTask} = require('../controllers/todosController');
 
-router.get('/addtask', addTask);
+router.post('/addtask', addTask);
 router.get('/todos', getTask);
-router.get('/increase', increaseTask);
-router.get('/decrease', decreaseTask);
-router.get('/delete', deleteTask);
+router.put('/increase', increaseTask);
+router.patch('/decrease', decreaseTask);
+router.delete('/delete', deleteTask);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 let todos = ["dancing", "Drinking"];
 
 const addTask = (req, res) => {
-    let { work } = req.query;
+    let { work } = req.body;
     console.log(work);
     if (work != "") {
         todos.push(work);
@@ -16,7 +16,7 @@ const getTask = (req, res) => {
 
 
 const increaseTask = (req, res) => {
-    let {work} = req.query;
+    let {work} = req.body;
     console.log(work);
     let idx = todos.indexOf(work);
     console.log(idx);
@@ -29,7 +29,7 @@ const increaseTask = (req, res) => {
 }
 
 const decreaseTask = (req, res) => {
-    let {work} = req.query;
+    let {work} = req.body;
     console.log(work);
     let idx = todos.indexOf(work);
     console.log(idx);
@@ -43,7 +43,7 @@ const decreaseTask = (req, res) => {
 
 
 const deleteTask = (req, res) => {
-    let {work} = req.query;
+    let {work} = req.body;
     console.log(work);
     let idx = todos.indexOf(work);
     console.log(idx);
