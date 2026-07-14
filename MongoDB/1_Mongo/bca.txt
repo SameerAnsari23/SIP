@@ -1,0 +1,64 @@
+// create 'data' folder in current folder
+
+// open terminal and write this command, this will start server--> mongod --dbpath=data
+
+
+// open another terminal and write this command, this will start mongosh shell which will communicate with mongodb--> mongosh
+
+
+// on mongosh terminal create database
+> use sunstone
+
+
+> show dbs
+
+
+> db.createCollection('BCA')
+
+
+> show collections
+
+
+> db.BCA.insertOne({
+    name: "Tanay Dewang",
+    rollNo: 007,
+    age: 20,
+    sem: "5th",
+    cgpa: 8.8
+})
+
+
+> db.BCA.insertMany([
+{
+ name: "Tanay Dewang",
+ rollNo: 007,
+ age: 20,
+ sem: "5th",
+ cgpa: 8.8
+ },
+{
+ name: "Aayush Lilhare",
+ rollNo: 0113,
+ sem: "5th",
+ age: 20,
+ cgpa: 8.9
+ },
+{
+ name: "Naveshwar pathak",
+ rollNo: 30697,
+ sem: "5th",
+ age: 20,
+ cgpa: 8.91
+ },
+{
+ name: "Vishal Koshal",
+ rollNo: 0095,
+ sem: "5th",
+ age: 20,
+ cgpa: 9.01
+ }
+]
+)
+
+
+> db.BCA.find()
