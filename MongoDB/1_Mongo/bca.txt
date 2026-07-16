@@ -62,3 +62,86 @@
 
 
 > db.BCA.find()
+
+
+db.BCA.findOne({
+  name: "Tanay"
+});
+
+db.BCA.find({
+  age: 22
+});
+
+
+// 1. Age Greater Than 20
+db.BCA.find({
+  age: {
+    $gt: 20
+  }
+});
+
+
+// 2. Age Less Than 25
+db.BCA.find({
+  age: {
+    $lt: 25
+  }
+});
+
+
+// Match Any Condition ($or)
+db.students.find({
+  $or: [
+    { age: 20 },
+    { cgpa: 9 }
+  ]
+});
+
+
+// Update one 
+db.students.updateOne(
+{ name: "Tanay" },
+{
+$set: { age: 20 }
+}
+);
+
+
+// Update multiple 
+db.students.updateMany(
+{},
+{
+$set: { country: "India" }
+}
+);
+
+
+
+// Increment Example
+db.students.updateOne(
+  { name: "Tanay" },
+  { $inc: { age: 1 } }
+);
+
+
+// Delete One Document
+db.students.deleteOne(
+  { name: "Aayush Lilhare" }
+);
+
+
+
+// Delete Multiple of document
+db.students.deleteMany({
+  course:"MERN"
+});
+
+// Delete All document
+db.students.deleteMany({});
+
+
+// Drop Collection -- Removes the entire collection from the database, including all of its documents and indexes.
+db.students.drop();
+
+// Drop Database -- Completely deletes the currently selected database, removing all its collections and metadata.
+db.dropDatabase();
