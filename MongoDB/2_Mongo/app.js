@@ -1,12 +1,22 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
+// const PORT = 8000;
 const path = require('path')
 const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const connectDB = require("./config/db");
+
+// Connect MongoDB
+connectDB();
 
 const student = require('./model/student');
 
@@ -31,13 +41,13 @@ app.get('/thankyou', (req, res) => {
 
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/form')
-.then(() => {
+// mongoose.connect('mongodb://127.0.0.1:27017/form')
+// .then(() => {
     app.listen(PORT, () => {
-        console.log('Mongodb is connected')
+        // console.log('Mongodb is connected')
         console.log(`Server is running at: ${PORT}`);
     })
-})
-.catch((err) => {
-    console.log(err);
-})
+// })
+// .catch((err) => {
+//     console.log(err);
+// })
