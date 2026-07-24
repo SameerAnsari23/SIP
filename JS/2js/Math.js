@@ -1,8 +1,8 @@
 let a = 36.98768797698
-console.log(a.toPrecision(4));
+console.log(a.toPrecision(5));
 
 const sum = 0.1 + 0.2; // 0.30000000000000004
-console.log(sum.toFixed(3)); // "0.30"
+console.log(sum.toFixed(4)); // "0.30"
 
 
 let b = 2.9;

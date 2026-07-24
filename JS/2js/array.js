@@ -19,15 +19,16 @@ arr.shift()
 console.log("After shift operation: " + arr)
 
 console.log(arr.indexOf(10))
+console.log(arr.indexOf(9))
 console.log(arr[4])
 
 let arr2 = [11, 1, 24, 25, 6, 16];
 
-arr.push(arr2);
-console.log(arr);
+// arr.push(arr2);
+// console.log(arr);
 
-let arr3 = [...arr, ...arr2];
-console.log(arr3)
+let arr3 = [...arr, ...arr2]; // spread operator
+console.log("New Array", arr3)
 
 
 let cgpa = 7.09;

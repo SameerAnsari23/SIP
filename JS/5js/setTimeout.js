@@ -24,6 +24,6 @@ setTimeout(() => {
             setTimeout(() => {
                 console.log("Nahi Nahi... Lakshdweep chalte hai");
             }, 1000)
-        }, 1000)
+        }, 3000)
     }, 1000)
 }, 1000);

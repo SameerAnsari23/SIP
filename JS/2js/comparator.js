@@ -5,13 +5,14 @@ console.log(2**4)
 
 
 console.log(2 + "2");
+console.log(typeof(2 + "2"));
 console.log("2" + 2 + 4 + "2")
 console.log(2 + 4 + "2")
 
 
 let x = 2
 let y = "2";
-console.log(x === y)
+console.log(x === y)   // check karta hai data type
 console.log(x == y)
 
 console.log(null == undefined)

@@ -6,6 +6,7 @@ sunstone();
 
 // parameter and argument
 function sunstone2(batch) {
+    // console.log("Welcome to 100% placed" + batch + "batch")
     console.log(`Welcome to 100% placed ${batch} batch`)
 }
 sunstone2(2027);

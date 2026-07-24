@@ -7,15 +7,15 @@
 // processUser(greet);
 
 
-// function greet() { 
-//     console.log("Hello"); 
-// }
-// function processUser(callback, name) {
-//     callback(); 
-//     return name;
-// }
-// processUser(greet, "Pavani");
-// console.log(processUser(greet, "Pavani"))
+function greet() { 
+    console.log("Hello"); 
+}
+function processUser(callback, name) {
+    callback(); 
+    return name;
+}
+processUser(greet, "Pavani");
+console.log(processUser(greet, "Pavani"))
 
 
 
@@ -28,7 +28,7 @@ function paymentProcessing(amount, msg) {
     msg();
 }
 
-// paymentProcessing(12000, paymentSuccess);
+paymentProcessing(12000, paymentSuccess);
 
 
 
@@ -60,3 +60,28 @@ const products = [
 products.forEach(i => {
     console.log(i.id, i.name, i.price)
 });
+
+
+function waiter () {
+    console.log("Waiter: Yes i am coming...")
+    console.log("Waiter: Yes sir, what you want....")
+}
+
+function customer (waiter) {
+    console.log("Customer: Hey waiter come here");
+    waiter()
+}
+customer(waiter);
+
+function customer_order () {
+    console.log("Noodles");
+}
+
+function chef() {
+    console.log()
+}
+
+
+function restaurant(customer) {
+    customer();
+}

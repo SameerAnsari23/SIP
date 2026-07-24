@@ -12,10 +12,11 @@ console.log(c[3])
 console.log(c.charAt(5))
 
 const d = "Gaurav"
-console.log(c + d)
+console.log(c + d)   // concatenation
 
-console.log(c.substring(2, 6))
-
+const e = 'Indore is cleanest city of india' 
+console.log(e.substring(2, 6))
+console.log(e.slice(2, 6))
 
 let e = 'Khushboo Pirvani at college'
 console.log(e)

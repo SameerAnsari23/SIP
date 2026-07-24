@@ -19,21 +19,21 @@ function greet() {
 // })
 
 
-async function print() {    
+async function print() {
     // const msg = await greet();
     // console.log(msg);
     // console.log("hello");
 
     try {
         const msg = await greet();
-    console.log(msg);
-    console.log("hello");
+        console.log(msg);
+        console.log("hello");
     }
-    catch(err) {
-        console.log(err);
+    catch (err) {
+        console.log("Yahi hai", err);
     }
 }
-// print()
+print()
 
 
 
@@ -43,7 +43,7 @@ function login(email, password) {
         console.log("Aapke credentials verify ho rahe hai... thoda wait kre!!!!!");
 
         setTimeout(() => {
-            if (email == "test@gmail.com"  && password == "123") {
+            if (email == "test@gmail.com" && password == "123") {
                 res({
                     id: 1,
                     name: "Test"
@@ -57,12 +57,12 @@ function login(email, password) {
 }
 
 async function auth() {
-    try{
+    try {
         const data = await login("test@gmail.com", "123");
         console.log(data);
         console.log(data.name);
     }
-    catch(err){
+    catch (err) {
         console.log(err)
     }
 }
@@ -111,7 +111,7 @@ function payment() {
 
         setTimeout(() => {
             console.log("Payment Sucessfull..🤩🤩🤗"),
-            res();
+                res();
         }, 1000)
     })
 }

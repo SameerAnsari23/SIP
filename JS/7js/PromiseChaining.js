@@ -121,22 +121,22 @@ function payment() {
         setTimeout(() => {
             console.log("Payment Sucessfull..🤩🤩🤗"),
             res();
-        }, 6000)
+        }, 1000)
     })
 }
 
 
 loginUser()
 .then(() => {
-    getProfile
-    // return getProfile
+    // getProfile
+    return getProfile()
 })
 .then(() => {
-    getOrder
-    // return getOrder
+    // getOrder
+    return getOrder()
 })
-.then((payment) => {
-    return payment
+.then(() => {
+    return payment()
 })
 .catch((err) => {
     console.log("Kuch toh gadbad hai daya....")
