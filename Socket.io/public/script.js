@@ -1,6 +1,6 @@
 const socket = io();
 console.log("Connected");
-
+console.log(socket)
 let btn = document.querySelector('.login-btn');
 let inp = document.querySelector('.username')
 let login = document.querySelector('.login');
@@ -20,7 +20,7 @@ btn.addEventListener('click', () => {
     }
 })
 
-socket.on('useradded', ({msg, username, clients, clientsCount}) => {
+socket.on('useradded', ({ msg, username, clients, clientsCount }) => {
     console.log(clients, clientsCount);
     if (clientsCount) {
         document.querySelector('.active-users').innerText = clientsCount;
@@ -53,7 +53,7 @@ document.querySelector('.send-button').addEventListener('click', () => {
     }
 })
 
-socket.on('msgrecieved', ({msg, username, socketId, clientsCount}) => {
+socket.on('msgrecieved', ({ msg, username, socketId, clientsCount }) => {
     console.log(clientsCount, msg, username)
     let chats = document.querySelector('.chats');
     let chat = document.createElement('div');
@@ -61,7 +61,7 @@ socket.on('msgrecieved', ({msg, username, socketId, clientsCount}) => {
     chat.classList.add('chat');
     let chatMsg = document.createElement('div');
     chatMsg.classList.add('chatMsg');
-    
+
     if (socketId === socket.id) {
         chatMsg.innerText = `${msg}`;
         chatMsg.classList.add('my-chat');
@@ -74,7 +74,7 @@ socket.on('msgrecieved', ({msg, username, socketId, clientsCount}) => {
     chats.appendChild(chat);
 })
 
-socket.on('updatedetails', ({msg, username, clients, clientsCount}) => {
+socket.on('updatedetails', ({ msg, username, clients, clientsCount }) => {
     let allUsers = document.querySelector('.all-users-status');
     allUsers.innerText = '';
     clients.forEach(c => {
