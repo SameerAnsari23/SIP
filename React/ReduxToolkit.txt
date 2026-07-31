@@ -1,0 +1,27 @@
+Redux Toolkit simplifies state management by using several key concepts. 
+Here are the core terms as explained in the video:
+1] Store: The single source of truth for your application's state. 
+   It is a centralized location where all data is maintained, managed, and accessed.
+2] Slice: Represents a specific feature of your application (e.g., authentication, a shopping cart, or a counter).
+   A slice contains the initial state for that feature and the corresponding logic to update it.
+3] Action: A plain object that represents an event occurring in the UI (like a button click). 
+   It can optionally carry additional information, known as a payload, to update the state.
+4] Reducer: A function that contains the logic to update the state. 
+   It takes the current state and an action as inputs and returns the new state based on the provided logic.
+5] State: Simply a fancy term for the data you want to track, manage, and manipulate throughout your application.
+
+
+
+Working
+The flow of Redux Toolkit follows a centralized state management pattern to prevent issues like prop drilling. 
+Here is the step-by-step lifecycle of how data and actions move through the system:
+1] User Interaction: A user performs an action on the UI, such as clicking a button.
+2] Dispatching an Action: An event handler is triggered, which calls a function to dispatch an action. 
+   An action is essentially a plain object that represents the event and any optional data (payload) intended to change the state.
+3] The Store: The dispatched action is sent to the Store, which acts as the "single source of truth" for the 
+   application's state.
+4] Reducer Execution: The store passes the action to the corresponding Reducer function defined within a Slice. 
+   The reducer contains the specific logic to update the state based on the action type.
+5] State Update: The reducer calculates the new state and returns it, effectively updating the data held within the store.
+6] UI Re-render: Once the state in the store is updated, the application detects the change, and the UI component 
+   using that state automatically re-renders to reflect the new data.

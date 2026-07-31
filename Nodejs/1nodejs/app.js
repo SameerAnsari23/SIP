@@ -8,5 +8,8 @@
 // }
 // add(20, 40);
 
+// const add = require('./math')
+// console.log(add(10, 70));
+
 const {add, sub} = require('./math')
 console.log(add(45, 90), sub(80, 70))

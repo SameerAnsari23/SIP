@@ -23,12 +23,22 @@
     <script>
         const inc = document.querySelector('.inc');
         console.log(inc);
+        const dec = document.querySelector('.dec');
+        console.log(dec);
         const cnt = document.querySelector('h3');
         console.log(cnt);
         
         inc.addEventListener('click', () => {
-            // console.log("clicked")
+            console.log("clicked")
+            console.log(cnt.innerHTML)
             cnt.innerHTML = Number(cnt.innerHTML) + 1
+            // console.log(cnt.innerText)
+        })
+        dec.addEventListener('click', () => {
+            // console.log("clicked")
+            if (cnt.innerText > 0) {
+                cnt.innerHTML = Number(cnt.innerHTML) - 1
+            }
             console.log(cnt.innerHTML)
             // console.log(cnt.innerText)
         })
